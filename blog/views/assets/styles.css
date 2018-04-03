@@ -1,0 +1,15 @@
+.justify-align {
+  text-align: justify;
+}
+body {
+  background-color: #FAFAFA;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+   flex: 1 0 auto;
+ }
+.postID{
+  display: none;
+}

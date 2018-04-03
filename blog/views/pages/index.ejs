@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+    <title>Welcome - Drive Right In</title>
+</head>
+<body>
+    <% include ../partials/header %>
+<main>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center cyan-text text-darken-2">Ye olde tech bloggo</h1>
+      <div class="row center">
+        <h5 class="header col s12 white-text light">He who writes blogs, does not write posts</h5>
+      </div>
+      <div class="row center">
+        <a href="/write"class="btn-large waves-effect waves-light teal lighten-1">Write a post</a>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <div class="parallax"><img src="img/un2.jpg" alt="Unsplashed image"></div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h3 class="center">Posts
+  </div>
+</div>
+  <% for (var i=0; i<posts.length;i++) { %>
+    <div class="parallax-container" style="height: 200px;">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <br><br>
+          <h3 class="center black-text light"><%= posts[i].title %></h3>
+          <br><br>
+        </div>
+      </div>
+      <div class="parallax"><img src= <%= posts[i].image %> ></div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <form action="/" method="POST">
+            <input name="number" type="text" class="postID" value = <%= posts[i].id %> >
+            <button class="btn waves-effect waves-light btn-small" type="submit">Edit Post</button>
+        </form>
+      </div>
+      <div class="section">
+        <div class="row">
+          <div class="col s12 center">
+            <p class="justify-align"><%= posts[i].content %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% } %>
+
+
+
+</main>
+<% include ../partials/footer %>
+
+</body>
+</html>
