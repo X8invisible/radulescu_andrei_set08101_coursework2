@@ -98,7 +98,7 @@ app.post('/write', function(req, res){
     res.redirect('/');
 });
 
-app.listen(5000, function(){
+var server = app.listen(5000,"127.0.0.1", function(){
   var host = server.address().address;
 	var port = server.address().port;
 
