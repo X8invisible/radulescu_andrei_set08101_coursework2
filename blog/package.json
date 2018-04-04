@@ -1,10 +1,11 @@
 {
-  "name": "web-blog",
-  "version": "0.1.0",
+  "name": "CW2Blog",
+  "version": "1.0.1",
   "description": "Blog for WebTech",
   "main": "index.js",
   "scripts": {
-    "serve": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "Andrei Radulescu",
   "license": "ISC",
@@ -12,7 +13,6 @@
     "body-parser": "^1.18.2",
     "ejs": "^2.5.8",
     "express": "^4.16.3",
-    "materialize-css": "^1.0.0-beta",
     "realm": "^2.3.3"
   }
 }
