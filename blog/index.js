@@ -13,6 +13,7 @@ let PostSchema = {
     id: 'int',
     timestamp: 'date',
     title: 'string',
+    author: 'string',
     content: 'string',
     image: 'string'
   }
@@ -61,13 +62,14 @@ app.post('/edit', function(req, res){
     var j = parseInt(req.body.number);
   let
     title = req.body['title'],
+    author = req.body['author'],
     content = req.body['content'],
     image = req.body['image'],
     timestamp = new Date();
     if(req.body['submit'] == 'Edit'){
       blogRealm.write(()=>{
-        blogRealm.create('Post', {id: j, title: title, content: content,image: image,
-          timestamp: timestamp}, true);
+        blogRealm.create('Post', {id: j, title: title, author:author,
+           content: content,image: image, timestamp: timestamp}, true);
       });
     }else if (req.body['submit'] == 'Delete') {
       blogRealm.write(()=>{
@@ -84,16 +86,16 @@ app.post('/write', function(req, res){
   let
     id = ++counter,
     title = req.body['title'],
+    author = req.body['author'],
     content = req.body['content'],
     image = req.body['image'],
     timestamp = new Date();
 
     blogRealm.write(()=>{
-      blogRealm.create('Post', {id: id, title: title, content: content,image: image,
-        timestamp: timestamp});
+      blogRealm.create('Post', {id: id, title: title, author:author,
+        content: content,image: image, timestamp: timestamp});
     });
     res.redirect('/');
-    //res.sendFile(__dirname + "/write-complete.html")
 });
 
 app.listen(5000, function(){
